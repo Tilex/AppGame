@@ -12,7 +12,7 @@ addJeuxForm.addEventListener('submit', evt => {
         url: jeuxUrlField.value
     }
  
-    fetch('http://localhost:3001/jeuxs', { 
+    fetch('http://localhost:3001/jeux', { 
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'

@@ -18,6 +18,11 @@ function loadJeux(jeux) {
 
 loadJeux(jeux);
 
+if(navigator.serviceWorker) {
+    navigator.serviceWorker
+        .register('sw.js')
+        .catch(err => console.error('service worker NON enregistré', err));
+}
 	
 if(window.caches) {
     caches.open('jeux-1.0').then(cache => {
