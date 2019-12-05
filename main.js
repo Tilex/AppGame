@@ -1,12 +1,16 @@
 console.log('Hello');
-const jeuxDiv = document.querySelector('#jeux');
-
+const jeuxDiv = document.querySelector('#table');
 function loadJeux(jeux) {
     fetch('https://us-central1-pwa-appgame.cloudfunctions.net/getJeux')
         .then(response => {
             response.json()
                 .then(jeux => {
-                    const alljeux = jeux.map(t => `<div><b>${t.name}</b> ${t.description}</div>`)
+                    const alljeux = jeux.map(t => `
+                            <tr>
+                                <td><image src="${t.image}" height="150px" width="200px"></image></td>
+                                <td>${t.name}</td>
+                                <td>${t.description}</td>
+                            </tr>`)
                         .join('');
 
                     jeuxDiv.innerHTML = alljeux;
@@ -33,23 +37,23 @@ if (window.caches) {
     });
 }
 
-	
+
 /*if(window.Notification && window.Notification !== "denied"){
     // demande une permission
     Notification.requestPermission(perm => {
         // vérifie si la permission est acceptée par l'utilisateur
         if(perm === "granted"){
-            
+
             // 7.2 Option de la notification
             const options = {
                 body : "Body de la notification",
                 icon : "images/icons/icon-72x72.png"
             }
- 
+
             // On crée une nouvelle notification
             // 7.2 On passe les options en deuxième argument
             const notif = new Notification("Hello notification", options);
-          
+
         }
         else{
             // Notification refusée
