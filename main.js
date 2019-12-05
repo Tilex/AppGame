@@ -16,4 +16,4 @@ function loadJeux(jeux) {
         .catch(console.error);
 }
 
-loadTechnologies(jeux);
+loadJeux(jeux);
