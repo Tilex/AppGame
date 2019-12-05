@@ -17,3 +17,14 @@ function loadJeux(jeux) {
 }
 
 loadJeux(jeux);
+
+	
+if(window.caches) {
+    caches.open('jeux-1.0').then(cache => {
+        cache.addAll([
+            'index.html',
+            'main.js',
+            'style.css'
+        ]);
+    });
+} 
