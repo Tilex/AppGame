@@ -1,7 +1,19 @@
 {
     "jeux": [
-        {"id": 1, "name": "Doom", "description": "Jeu de tir à la première personne"},
-        {"id": 2, "name": "Call Of Duty", "description": "Jeu de tir à la première personne"},
-        {"id": 3, "name": "Tomb Raider", "description": "Exploration"}
+        {
+            "id": 1,
+            "name": "Doom",
+            "description": "Jeu de tir à la première personne"
+        },
+        {
+            "id": 2,
+            "name": "Call Of Duty",
+            "description": "Jeu de tir à la première personne"
+        },
+        {
+            "id": 3,
+            "name": "Tomb Raider",
+            "description": "Exploration"
+        }
     ]
 }

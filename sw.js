@@ -4,7 +4,7 @@ const cacheName = 'veille-jeux' + '1.1';
 
 self.addEventListener('install', (evt) => {
     console.log(`sw installé à ${new Date().toLocaleTimeString()}`);
- 
+
     const cachePromise = caches.open(cacheName).then(cache => {
         return cache.addAll([
             'index.html',
@@ -13,29 +13,29 @@ self.addEventListener('install', (evt) => {
             'add_jeux.html',
             'add_jeux.js',
         ])
-        .then(console.log('cache initialisé'))
-        .catch(console.err);
+            .then(console.log('cache initialisé'))
+            .catch(console.err);
     });
- 
+
     evt.waitUntil(cachePromise);
- 
+
 });
- 
+
 self.addEventListener('activate', (evt) => {
-    console.log(`sw activé à ${new Date().toLocaleTimeString()}`); 
-  
+    console.log(`sw activé à ${new Date().toLocaleTimeString()}`);
+
     // 5.4 Supprimer les anciennes instances de cache
-    let cacheCleanPromise = caches.keys().then()(keys => {
-        keys.forEach(key => {            
-            if(key !== cacheName){
+    let cacheCleanPromise = caches.keys().then(keys => {
+        keys.forEach(key => {
+            if (key !== cacheName) {
                 caches.delete(key);
             }
         });
     });
- 
+
     evt.waitUntil(cacheCleanPromise);
 });
- 
+
 //..
 self.addEventListener('fetch', (evt) => {
 
@@ -50,13 +50,13 @@ self.addEventListener('fetch', (evt) => {
             // quand on a la réponse on la retourne (clone car on ne peut la lire qu'une fois)
             return res.clone();
         })
-        // Si on a une erreur et que l'on arrive pas à récupérer depuis le réseau, on va chercher dans le cache
-        .catch(err => {
-            console.log("url récupérée depuis le cache", evt.request.url);
-            return caches.match(evt.request);
-        })
+            // Si on a une erreur et que l'on arrive pas à récupérer depuis le réseau, on va chercher dans le cache
+            .catch(err => {
+                console.log("url récupérée depuis le cache", evt.request.url);
+                return caches.match(evt.request);
+            })
     );
-    
+
 
     // if(!navigator.onLine) {
     //     const headers = { headers: { 'Content-Type': 'text/html;charset=utf-8'} };
@@ -102,3 +102,29 @@ self.addEventListener('fetch', (evt) => {
 
 
 });
+
+self.registration.showNotification("Notification du SW", {
+    body:"je suis une notification dite persistante",
+  
+    // 7.4 Options de notifications grâce aux actions
+    actions:[
+        {action:"accept", title:"accepter"},
+        {action: "refuse", title: "refuser"}
+    ]
+})
+ 
+// 7.4 Options de notifications grâce aux actions
+// Ecouteur au clic d'un des deux boutons de la notification
+self.addEventListener("notificationclick", evt => {
+    console.log("notificationclick evt", evt);
+    if(evt.action === "accept"){
+        console.log("vous avez accepté");
+    } else if(evt.action === "refuse"){
+        console.log("vous avez refusé");
+    } else{
+        console.log("vous avez cliqué sur la notification (pas sur un bouton)");
+    }
+  
+    // 7.5 Fermer programmatiquement une notification
+    evt.notification.close();
+})
