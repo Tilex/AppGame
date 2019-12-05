@@ -1,9 +1,8 @@
-
 console.log('Hello');
 const jeuxDiv = document.querySelector('#jeux');
 
 function loadJeux(jeux) {
-    fetch('http://localhost:3001/jeux')
+    fetch('https://us-central1-pwa-appgame.cloudfunctions.net/getJeux')
         .then(response => {
             response.json()
                 .then(jeux => {

@@ -1,12 +1,67 @@
 console.log("hello depuis le service worker");
 
-const cacheName = 'veille-jeux' + '1.1';
+const cacheName = 'jeux' + '1.0';
+
+	
+// 9.6 Synchroniser les données au retour de la connexion
+// Ajout des imports pour les appels méthodes hors connexion
+self.importScripts('idb/idb.js', 'idb/database.js');
+ 
+// ..
+ 
+ 
+// 9.6 Synchroniser les données au retour de la connexion
+self.addEventListener('sync', event => {
+    console.log('sync event', event);
+    // test du tag de synchronisation utilisé dans add_jeu
+    if (event.tag === 'sync-jeux') {
+        console.log('syncing', event.tag);
+        // Utilisation de waitUntil pour s'assurer que le code est exécuté (Attend une promise)
+        event.waitUntil(updateJeuPromise);
+    }
+})
+ 
+// 9.6 Synchroniser les données au retour de la connexion
+// constante de la Promise permettant de faire la synchronisation
+const updateJeuPromise = new Promise(function(resolve, reject) {
+ 
+    // récupération de la liste des jeux de indexedDB
+    getAllJeux().then(jeux => {
+        console.log('got jeux from sync callback', jeux);
+        
+        // pour chaque item : appel de l'api pour l'ajouter à la base
+        jeux.map(jeu => {
+            console.log('Attempting fetch', jeu);
+            fetch('https://us-central1-pwa-appgame.cloudfunctions.net/addJeu', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(jeu)
+            })
+            .then(() => {
+                // Succès : suppression de l'item en local si ajouté en distant
+                console.log('Success update et id supprimée', jeu.id);
+                return deleteJeu(jeu.id);
+            })
+            .catch(err => {
+                // Erreur
+                console.log('Error update et id supprimée', err);
+                resolve(err);
+            })
+        })
+ 
+    })
+});
 
 self.addEventListener('install', (evt) => {
     console.log(`sw installé à ${new Date().toLocaleTimeString()}`);
 
     const cachePromise = caches.open(cacheName).then(cache => {
         return cache.addAll([
+            'idb/idb.js',
+            'idb/database.js',
             'index.html',
             'main.js',
             'style.css',
@@ -41,6 +96,9 @@ self.addEventListener('fetch', (evt) => {
 
     // 5.3 Stratégie de network first with cache fallback
     // On doit envoyer une réponse
+    if(evt.request.method === 'POST') {
+        return;
+    }
     evt.respondWith(
         // on doit d'abord faire une requête sur le réseau de ce qui a été intercepté
         fetch(evt.request).then(res => {
@@ -103,7 +161,7 @@ self.addEventListener('fetch', (evt) => {
 
 });
 
-self.registration.showNotification("Notification du SW", {
+/*self.registration.showNotification("Notification du SW", {
     body:"je suis une notification dite persistante",
   
     // 7.4 Options de notifications grâce aux actions
@@ -127,4 +185,4 @@ self.addEventListener("notificationclick", evt => {
   
     // 7.5 Fermer programmatiquement une notification
     evt.notification.close();
-})
+})*/
