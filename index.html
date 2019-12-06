@@ -1,36 +1,61 @@
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="groupe a labour">
   <title>AppGame</title>
+  
+  
+  
+  <!-- =========================================================== css -->
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- =========================================================== js -->
+ 
   <link rel="manifest" href="/manifest.json">
-  <link href="style.css" rel="stylesheet">
+  <script src="js/responsive-nav.js"></script>
+  <!-- =========================================================== icon -->
+ 
   <link rel="icon" sizes="32x32" href="images/favicon/favicon-32.png" type="image/png">
   <link rel="icon" sizes="64x64" href="images/favicon/favicon-64.png" type="image/png">
   <link rel="icon" sizes="96x96" href="images/favicon/favicon-96.png" type="image/png">
   <link rel="icon" sizes="196x196" href="images/favicon/favicon-196.png" type="image/png">
+
+  <!-- =========================================================== meta -->
   <meta name="msapplication-TileImage" content="images/favicon/favicon-144.png">
   <meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
 
 <body id="page-top">
-  <h1>Vos Jeux</h1>
-  <div class="container" style="height:85%";>
-  <div id="jeux"></div>
-  <table id="table">
-    <script src="main.js"></script>
-  </table>
-</body>
-</div>
-<footer style="height:10%">
-  <div class="navbar">
-    <a href="index.html" class="active">Jeux</a>
-    <a href="add_jeux.html">Chercher</a>
-    <a href="#amis">Amis</a>
-  </div>
-</footer>
+
+    <header>
+        <a href="#home" class="logo" data-scroll> <img src="images/icons/volpy.ico" alt="plagiat" width="40px" height="35px"></a>
+        <nav class="nav-collapse">
+          <ul>
+            <li class="menu-item active"><a href="#home" data-scroll>Jeux</a></li>
+            <li class="menu-item"><a href="#about" data-scroll>Chercher</a></li>
+            <li class="menu-item"><a href="#projects" data-scroll>Amis</a></li>
+            <li class="menu-item"><a href="#blog" data-scroll>Connexion</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+      <h1>Vos Jeux</h1>
+      <div class="container" style="height:85%";>
+        <div id="jeux"></div>
+       <table id="table">
+          <script src="main.js"></script>
+        </table>
+  
+
+        <script src="js/fastclick.js"></script>
+        <script src="js/scroll.js"></script>
+        <script src="js/fixed-responsive-nav.js"></script>
+  </body>
 
 </html>
