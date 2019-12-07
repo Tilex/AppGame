@@ -25,12 +25,21 @@
     </div>
 </body>
 </div>
-<footer style="height:10%">
-  <div class="navbar">
-    <a href="index.html" class="active">Jeux</a>
-    <a href="add_jeux.html">Chercher</a>
-    <a href="#amis">Amis</a>
+<footer>
+  <div class="navbar" id="myNavbar">
+    <a href="index.html">Jeux</a>
+    <a href="add_jeux.html">Ajouter un jeu</a>
+    <a href="#contact">Amis</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
+  <script>function myFunction() {
+    var x = document.getElementById("myNavbar");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }</script>
 </footer>
 
 </html>

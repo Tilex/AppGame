@@ -9,7 +9,7 @@ function loadJeux(jeux) {
                     <div class="card">
                     <img src="${t.url_background}" alt="game pic" style="width:100%">
                     <h1>${t.name}</h1>
-                    <p class="price">${t.description}</p>
+                    <p class="description">${t.description}</p>
                     <p>
                       <i class="fas fa-star checked" size="5x"></i>
                       <i class="fas fa-star checked"></i>
