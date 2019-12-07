@@ -1,5 +1,6 @@
 const jeunameField = document.querySelector('#jeu-name');
 const jeuDescriptionField = document.querySelector('#jeu-description');
+const jeuImageField = document.querySelector('#jeu-image');
 const addJeuForm = document.querySelector('#add-jeu-form');
 
 addJeuForm.addEventListener('submit', evt => {
@@ -9,8 +10,8 @@ addJeuForm.addEventListener('submit', evt => {
         id: Date.now(),
         name: jeunameField.value,
         description: jeuDescriptionField.value,
+        url_background : jeuImageField.value
     }
-
     //9.3 Branchement de notre Bdd Firebase
     fetch('https://us-central1-pwa-appgame.cloudfunctions.net/addJeu', { 
             method: 'POST', 
@@ -41,6 +42,7 @@ addJeuForm.addEventListener('submit', evt => {
         })
         .then(() => {
             clearForm();
+            document.location.href="index.html"
         })
         .catch(error => console.error(error));
 
@@ -48,6 +50,7 @@ addJeuForm.addEventListener('submit', evt => {
         const clearForm = () => {
             jeunameField.value = '';
             jeuDescriptionField.value = '';
+            jeuImageField.value = '';
             jeunameField.focus();
         }; 
 })

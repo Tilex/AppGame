@@ -20,9 +20,15 @@
 </div>
 <div id="addform">
   <form id="add-jeu-form">
-    <input type="text" placeholder="nom du jeu" id="jeu-name"><br>
-    <input type="text" placeholder="description" id="jeu-description"><br>
-    <button type="submit">ajouter</button>
+    <div class="card">
+      <img src="https://images2.alphacoders.com/474/thumb-1920-474206.jpg" alt="game pic" style="width:100%">
+      <h1>Dota 2</h1>
+      <p class="price">Dota 2 est un jeu vidéo de type arène de bataille en ligne multijoueur développé et édité par Valve Corporation avec l'aide de certains des créateurs du jeu d'origine : Defense of the Ancients, un mod de carte personnalisée pour le jeu de stratégie en temps réel Warcraft III: Reign of Chaos et son extension Warcraft III: The Frozen Throne.</p>
+      <input type="hidden" id="jeu-name" value="Dota 2">
+      <input type="hidden" id="jeu-description" value="Dota 2 est un jeu vidéo de type arène de bataille en ligne multijoueur développé et édité par Valve Corporation avec l'aide de certains des créateurs du jeu d'origine : Defense of the Ancients, un mod de carte personnalisée pour le jeu de stratégie en temps réel Warcraft III: Reign of Chaos et son extension Warcraft III: The Frozen Throne.">
+      <input type="hidden" id="jeu-image" value="https://images2.alphacoders.com/474/thumb-1920-474206.jpg">
+      <button type="submit">Ajouter à mes jeux</button>
+    </div>
   </form>
   <script src="add_jeux.js"></script>
   <script src="idb/database.js"></script>
