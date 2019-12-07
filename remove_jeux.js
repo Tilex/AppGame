@@ -1,10 +1,17 @@
-const jeuIdField = document.querySelector();
+ var id;
+ function clicked(item) {
+    const removeJeuForm = $(item).attr("id");
+    console.log(removeJeuForm);
+};
+const removeJeuForm = document.querySelector(id)
+console.log(removeJeuForm);
+console.log(id);
 
-addJeuForm.addEventListener('submit', evt => {
+removeJeuForm.addEventListener('submit', evt => {
     evt.preventDefault();
     const payload = {
         // 9.1 Infrastructure
-        id: jeuIdField,
+        id: removeJeuForm,
     }
     //9.3 Branchement de notre Bdd Firebase
     fetch('https://us-central1-pwa-appgame.cloudfunctions.net/deleteJeu', { 
@@ -42,9 +49,6 @@ addJeuForm.addEventListener('submit', evt => {
 
         // 9.1 Infrastructure
         const clearForm = () => {
-            jeunameField.value = '';
-            jeuDescriptionField.value = '';
-            jeuImageField.value = '';
             jeuIdField.focus();
         }; 
 })

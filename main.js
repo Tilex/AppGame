@@ -5,7 +5,8 @@ function loadJeux(jeux) {
     .then(response => {
         response.json()
             .then(jeux => {
-                const alljeux = jeux.map(t =>` 
+                const alljeux = jeux.map(t =>`
+                <form = ${t.id}>
                 <div class="card">
                 <img src="${t.url_background}" alt="game pic" style="width:100%">
                 <h1>${t.name}</h1>
@@ -13,6 +14,7 @@ function loadJeux(jeux) {
                 <button name="${t.id}" type="submit" onclick="clicked(this);">Retirer de mes jeux</button>
               </div>
             </div>
+            </form> 
             `)
                     .join('');
 
@@ -21,9 +23,6 @@ function loadJeux(jeux) {
     })
     .catch(console.error);
 }
-function clicked(item) {
-alert($(item).attr("name"));
-};
 
 loadJeux(jeux);
 
