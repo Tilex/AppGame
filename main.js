@@ -2,25 +2,28 @@ console.log('Hello');
 const jeuxDiv = document.querySelector('#card-container');
 function loadJeux(jeux) {
     fetch('https://us-central1-pwa-appgame.cloudfunctions.net/getJeux')
-        .then(response => {
-            response.json()
-                .then(jeux => {
-                    const alljeux = jeux.map(t => `
-                    <div class="card">
-                    <img src="${t.url_background}" alt="game pic" style="width:100%">
-                    <h1>${t.name}</h1>
-                    <p class="description">${t.description}</p>
-                    <button type="submit">Retirer de mes jeux</button>
-                  </div>
-                </div>
-                `)
-                        .join('');
+    .then(response => {
+        response.json()
+            .then(jeux => {
+                const alljeux = jeux.map(t =>` 
+                <div class="card">
+                <img src="${t.url_background}" alt="game pic" style="width:100%">
+                <h1>${t.name}</h1>
+                <p class="description">${t.description}</p>
+                <button name="${t.id}" type="submit" onclick="clicked(this);">Retirer de mes jeux</button>
+              </div>
+            </div>
+            `)
+                    .join('');
 
-                    jeuxDiv.innerHTML = alljeux;
-                });
-        })
-        .catch(console.error);
+                jeuxDiv.innerHTML = alljeux;
+            });
+    })
+    .catch(console.error);
 }
+function clicked(item) {
+alert($(item).attr("name"));
+};
 
 loadJeux(jeux);
 

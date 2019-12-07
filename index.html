@@ -12,6 +12,7 @@
   <link rel="icon" sizes="64x64" href="images/favicon/favicon-64.png" type="image/png">
   <link rel="icon" sizes="96x96" href="images/favicon/favicon-96.png" type="image/png">
   <link rel="icon" sizes="196x196" href="images/favicon/favicon-196.png" type="image/png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <meta name="msapplication-TileImage" content="images/favicon/favicon-144.png">
   <meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
@@ -33,6 +34,9 @@
     <a href="#contact">Amis</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
+  <script>function clicked(item) {
+    alert($(item).attr("name"));
+   };</script>
   <script>function myFunction() {
     var x = document.getElementById("myNavbar");
     if (x.className === "navbar") {
