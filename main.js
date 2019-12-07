@@ -10,13 +10,7 @@ function loadJeux(jeux) {
                     <img src="${t.url_background}" alt="game pic" style="width:100%">
                     <h1>${t.name}</h1>
                     <p class="description">${t.description}</p>
-                    <p>
-                      <i class="fas fa-star checked" size="5x"></i>
-                      <i class="fas fa-star checked"></i>
-                      <i class="fas fa-star checked"></i>
-                      <i class="fas fa-star checked"></i>
-                      <i class="fas fa-star"></i>
-                    </p>
+                    <button type="submit">Retirer de mes jeux</button>
                   </div>
                 </div>
                 `)
