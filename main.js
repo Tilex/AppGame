@@ -1,16 +1,25 @@
 console.log('Hello');
-const jeuxDiv = document.querySelector('#table');
+const jeuxDiv = document.querySelector('#card-container');
 function loadJeux(jeux) {
     fetch('https://us-central1-pwa-appgame.cloudfunctions.net/getJeux')
         .then(response => {
             response.json()
                 .then(jeux => {
                     const alljeux = jeux.map(t => `
-                            <tr>
-                                <td><image src="${t.image}" height="150px" width="200px"></image></td>
-                                <td>${t.name}</td>
-                                <td>${t.description}</td>
-                            </tr>`)
+                    <div class="card">
+                    <img src="${t.url_background}" alt="game pic" style="width:100%">
+                    <h1>${t.name}</h1>
+                    <p class="price">${t.description}</p>
+                    <p>
+                      <i class="fas fa-star checked" size="5x"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star checked"></i>
+                      <i class="fas fa-star"></i>
+                    </p>
+                  </div>
+                </div>
+                `)
                         .join('');
 
                     jeuxDiv.innerHTML = alljeux;
