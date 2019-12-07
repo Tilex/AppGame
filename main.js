@@ -6,7 +6,7 @@ function loadJeux(jeux) {
         response.json()
             .then(jeux => {
                 const alljeux = jeux.map(t =>`
-                <form = ${t.id}>
+                <form id = ${t.id}>
                 <div class="card">
                 <img src="${t.url_background}" alt="game pic" style="width:100%">
                 <h1>${t.name}</h1>
