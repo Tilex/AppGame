@@ -12,6 +12,17 @@
   <link rel="icon" sizes="64x64" href="images/favicon/favicon-64.png" type="image/png">
   <link rel="icon" sizes="96x96" href="images/favicon/favicon-96.png" type="image/png">
   <link rel="icon" sizes="196x196" href="images/favicon/favicon-196.png" type="image/png">
+  <script src="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth.css" />
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+  <script> 
+      $(function(){
+        $("#header1").load("header.html"); 
+        //$("#footer1").load("footer.html"); 
+      });
+      </script>
   <meta name="msapplication-TileImage" content="images/favicon/favicon-144.png">
   <meta name="msapplication-TileColor" content="#FFFFFF">
 </head>
@@ -20,20 +31,86 @@
 </div>
 <div id="addform">
   <form id="add-jeu-form">
-    <input type="text" placeholder="nom du jeu" id="jeu-name"><br>
-    <input type="text" placeholder="description" id="jeu-description"><br>
-    <button type="submit">ajouter</button>
+    <div class="card">
+      <img src="https://images2.alphacoders.com/474/thumb-1920-474206.jpg" alt="game pic" style="width:100%">
+      <h1>Dota 2</h1>
+      <p class="description">Dota 2 est un jeu vidéo de type arène de bataille en ligne multijoueur développé et édité par Valve Corporation avec l'aide de certains des créateurs du jeu d'origine : Defense of the Ancients, un mod de carte personnalisée pour le jeu de stratégie en temps réel Warcraft III: Reign of Chaos et son extension Warcraft III: The Frozen Throne.</p>
+      <input type="hidden" id="jeu-name" value="Dota 2">
+      <input type="hidden" id="jeu-description" value="Dota 2 est un jeu vidéo de type arène de bataille en ligne multijoueur développé et édité par Valve Corporation avec l'aide de certains des créateurs du jeu d'origine : Defense of the Ancients, un mod de carte personnalisée pour le jeu de stratégie en temps réel Warcraft III: Reign of Chaos et son extension Warcraft III: The Frozen Throne.">
+      <input type="hidden" id="jeu-image" value="https://images2.alphacoders.com/474/thumb-1920-474206.jpg">
+      <button type="submit">Ajouter à mes jeux</button>
+    </div>
   </form>
+
+  <form id="add-jeu2-form">
+    <div class="card">
+      <img src="https://www.journaldugeek.com/files/2014/01/406766_leagueoflegends-600x337.jpg" alt="game pic" style="width:100%">
+      <h1>League of Legend</h1>
+      <p class="description">League of Legends, anciennement nommé League of Legends: Clash of Fates est un jeu vidéo de type arène de bataille en ligne gratuit développé et édité par Riot Games sur Windows et Mac OS X.</p>
+      <input type="hidden" id="jeu2-name" value="League of Legend">
+      <input type="hidden" id="jeu2-description" value="League of Legends, anciennement nommé League of Legends: Clash of Fates est un jeu vidéo de type arène de bataille en ligne gratuit développé et édité par Riot Games sur Windows et Mac OS X.">
+      <input type="hidden" id="jeu2-image" value="https://www.journaldugeek.com/files/2014/01/406766_leagueoflegends-600x337.jpg">
+      <button type="submit">Ajouter à mes jeux</button>
+    </div>
+  </form>
+
+  <form id="add-jeu3-form">
+    <div class="card">
+      <img src="https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege-v3/r6-siege-meta_image-home-sledge.jpg" alt="game pic" style="width:100%">
+      <h1>Rainbow 6</h1>
+      <p class="description">Tom Clancy's Rainbow Six: Siege est un jeu vidéo de tir tactique développé par Ubisoft Montréal et édité par Ubisoft, sorti le 1ᵉʳ décembre 2015 sur PlayStation 4, Xbox One et Windows.</p>
+      <input type="hidden" id="jeu3-name" value="Rainbow 6">
+      <input type="hidden" id="jeu3-description" value="Tom Clancy's Rainbow Six: Siege est un jeu vidéo de tir tactique développé par Ubisoft Montréal et édité par Ubisoft, sorti le 1ᵉʳ décembre 2015 sur PlayStation 4, Xbox One et Windows.">
+      <input type="hidden" id="jeu3-image" value="https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege-v3/r6-siege-meta_image-home-sledge.jpg">
+      <button type="submit">Ajouter à mes jeux</button>
+    </div>
+  </form>
+
+  <form id="add-jeu4-form">
+    <div class="card">
+      <img src="https://media.playstation.com/is/image/SCEA/call-of-duty-modern-warfare-hero-banner-03-ps4-us-30may19?$native_nt$" alt="game pic" style="width:100%">
+      <h1>Call of Duty : Modern Warfare</h1>
+      <p class="description">Call of Duty: Modern Warfare est un jeu vidéo de tir à la première personne développé par Infinity Ward et édité par Activision. Il est sorti le 25 octobre 2019 sur Windows, PlayStation 4 et Xbox One.</p>
+      <input type="hidden" id="jeu4-name" value="Call of Duty : Modern Warfare">
+      <input type="hidden" id="jeu4-description" value="Call of Duty: Modern Warfare est un jeu vidéo de tir à la première personne développé par Infinity Ward et édité par Activision. Il est sorti le 25 octobre 2019 sur Windows, PlayStation 4 et Xbox One.">
+      <input type="hidden" id="jeu4-image" value="https://media.playstation.com/is/image/SCEA/call-of-duty-modern-warfare-hero-banner-03-ps4-us-30may19?$native_nt$">
+      <button type="submit">Ajouter à mes jeux</button>
+    </div>
+  </form>
+
+  <form id="add-jeu5-form">
+    <div class="card">
+      <img src="https://www.erenumerique.fr/wp-content/uploads/2018/11/la-prochaine-bande-annonce-de-red-dead-redemption-2-arrive-le-2-mai-88fb1861.jpg" alt="game pic" style="width:100%">
+      <h1>Red Dead Redemption 2</h1>
+      <p class="description">Red Dead Redemption II est un jeu vidéo d'action-aventure et de western multiplateforme, développé par Rockstar Studios et édité par Rockstar Games, sorti le 26 octobre 2018 sur PlayStation 4 et Xbox One et le 5 novembre 2019 sur Microsoft Windows. Une version Stadia est également prévue pour novembre 2019.</p>
+      <input type="hidden" id="jeu5-name" value="Red Dead Redemption 2">
+      <input type="hidden" id="jeu5-description" value="Red Dead Redemption II est un jeu vidéo d'action-aventure et de western multiplateforme, développé par Rockstar Studios et édité par Rockstar Games, sorti le 26 octobre 2018 sur PlayStation 4 et Xbox One et le 5 novembre 2019 sur Microsoft Windows. Une version Stadia est également prévue pour novembre 2019.">
+      <input type="hidden" id="jeu5-image" value="https://www.erenumerique.fr/wp-content/uploads/2018/11/la-prochaine-bande-annonce-de-red-dead-redemption-2-arrive-le-2-mai-88fb1861.jpg">
+      <button type="submit">Ajouter à mes jeux</button>
+    </div>
+  </form>
+  <br>
+  <br>
   <script src="add_jeux.js"></script>
   <script src="idb/database.js"></script>
   <script src="idb/idb.js"></script>
 </div>
 <footer>
-  <div class="navbar">
-    <a href="index.html">Jeux</a>
-    <a href="add_jeux.html" class="active">Chercher</a>
-    <a href="#amis">Amis</a>
+  <div class="navbar" id="myNavbar">
+    <a href="accueil.html">Jeux</a>
+    <a href="add_jeux.html">Ajouter un jeu</a>
+    <a class="d-flex justify-content-center btn btn-default text-light" id="logout"  href="#signout">Se déconnecter<i class="fas fa-sign-out-alt"></i></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
+  <script>function myFunction() {
+    var x = document.getElementById("myNavbar");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }</script>
+  <script src="pwa-appgame/app.js"></script>
 </footer>
 
 </html>

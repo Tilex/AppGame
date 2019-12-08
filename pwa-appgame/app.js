@@ -1,14 +1,14 @@
-
 (function(){
 
 
     const config = {
-        apiKey: "AIzaSyBHw1eKMUVSPCZDag9EuXXthx8oom4uVb4",
-        authDomain: "app-game-akajji.firebaseapp.com",
-        databaseURL: "https://app-game-akajji.firebaseio.com",
-        storageBucket: "app-game-akajji.appspot.com",
-        messagingSenderId: "1097373638477",
-        appId: "1:1097373638477:web:a7473071e422b570c22104"
+        apiKey: "AIzaSyC7A8wBklJGRYhLIIDjqJ2GXXya4cLyWlQ",
+        authDomain: "pwa-appgame.firebaseapp.com",
+        databaseURL: "https://pwa-appgame.firebaseio.com",
+        projectId: "pwa-appgame",
+        storageBucket: "pwa-appgame.appspot.com",
+        messagingSenderId: "963010366551",
+        appId: "1:963010366551:web:43bce5da03aba73b816712"
       };
       
       firebase.initializeApp(config);
@@ -27,7 +27,7 @@ if(btnConnexion){
       const auth = firebase.auth();
       //sign in
       const promise = auth.signInWithEmailAndPassword(email,pass);
-      document.location.href="loggedin.html"
+      document.location.href="accueil.html"
       promise.catch( e => console.log(e.message));
   });
 };
@@ -73,7 +73,7 @@ if(btnDisconnect){
           console.log(result);
           console.log(result.user);
           console.log("success.. Googlla Account Linked");
-          document.location.href="loggedin.html"
+          document.location.href="accueil.html"
       }).catch(function(err){
           console.log(err);
           console.log(err.code);

@@ -62,7 +62,7 @@ self.addEventListener('install', (evt) => {
         return cache.addAll([
             'idb/idb.js',
             'idb/database.js',
-            'index.html',
+            'accueil.html',
             'main.js',
             'style.css',
             'add_jeux.html',

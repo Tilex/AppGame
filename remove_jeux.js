@@ -43,7 +43,7 @@ removeJeuForm.addEventListener('submit', evt => {
         })
         .then(() => {
             clearForm();
-            document.location.href="index.html"
+            document.location.href="accueil.html"
         })
         .catch(error => console.error(error));
 
