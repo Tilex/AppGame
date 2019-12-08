@@ -1,18 +1,21 @@
-const jeunameField = document.querySelector('#jeu-name');
-const jeuDescriptionField = document.querySelector('#jeu-description');
-const addJeuForm = document.querySelector('#add-jeu-form');
+const email = document.querySelector('#email1');
+const pseudo = document.querySelector('#pseudo');
+const password = document.querySelector('#password');
+const inscriptionForm = document.querySelector('#inscription');
 
-addJeuForm.addEventListener('submit', evt => {
+inscriptionForm.addEventListener('submit', evt => {
     evt.preventDefault();
+    
     const payload = {
         // 9.1 Infrastructure
         id: Date.now(),
-        name: jeunameField.value,
-        description: jeuDescriptionField.value,
+        email: email.value,
+        pseudo: pseudo.value,
+        password: password.value,
     }
 
     //9.3 Branchement de notre Bdd Firebase
-    fetch('https://us-central1-pwa-appgame.cloudfunctions.net/addJeu', { 
+    fetch('https://us-central1-pwa-technos-lkj.cloudfunctions.net/addTechno', { 
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +23,7 @@ addJeuForm.addEventListener('submit', evt => {
             body: JSON.stringify(payload)
         })
         .then(resp => {
-            console.log('resp to post to /jeux', resp);
+            console.log('resp to post to /technos', resp);
         })
         // 9.1 Infrastructure
         .catch(() => {
@@ -28,10 +31,10 @@ addJeuForm.addEventListener('submit', evt => {
                 console.log('SyncManager supported by browser');
                 console.log('we are probably offline');
                 navigator.serviceWorker.ready.then(registration => {
-                    // put jeu in IndexedDB for later syncing
-                    return putJeu(payload, payload.id).then(() => {
+                    // put techno in IndexedDB for later syncing
+                    return putTechno(payload, payload.id).then(() => {
                         // register a sync with the ServiceWorker
-                        return registration.sync.register('sync-jeux')
+                        return registration.sync.register('sync-technos')
                     });
                 })
             } else {
@@ -46,8 +49,9 @@ addJeuForm.addEventListener('submit', evt => {
 
         // 9.1 Infrastructure
         const clearForm = () => {
-            jeunameField.value = '';
-            jeuDescriptionField.value = '';
-            jeunameField.focus();
+            email.value = '';
+            pseudo.value = '';
+            password.value = '';
+            email.focus();
         }; 
 })

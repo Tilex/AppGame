@@ -1,34 +1,19 @@
 {
-    "jeux" : {
-      "1" : {
-        "id" : 1,
-        "name" : "Dota 2",
-        "description" : "Dota 2 est un jeu vidéo de type arène de bataille en ligne multijoueur développé et édité par Valve Corporation avec l'aide de certains des créateurs du jeu d'origine : Defense of the Ancients, un mod de carte personnalisée pour le jeu de stratégie en temps réel Warcraft III: Reign of Chaos et son extension Warcraft III: The Frozen Throne.",
-        "url_background" : "https://images2.alphacoders.com/474/thumb-1920-474206.jpg"
-      },
-      "2" : {
-        "id" : 2,
-        "name" : "League of Legend",
-        "description" : "League of Legends, anciennement nommé League of Legends: Clash of Fates est un jeu vidéo de type arène de bataille en ligne gratuit développé et édité par Riot Games sur Windows et Mac OS X.",
-        "url_background" : "https://www.journaldugeek.com/files/2014/01/406766_leagueoflegends-600x337.jpg"
-      },
-      "3" : {
-        "id" : 3,
-        "name" : "Rainbow 6",
-        "description" : "Tom Clancy's Rainbow Six: Siege est un jeu vidéo de tir tactique développé par Ubisoft Montréal et édité par Ubisoft, sorti le 1ᵉʳ décembre 2015 sur PlayStation 4, Xbox One et Windows.",
-        "url_background" : "https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege-v3/r6-siege-meta_image-home-sledge.jpg"
-      },
-      "4" : {
-        "id" : 4,
-        "name" : "Call of Duty : Modern Warfare",
-        "description" : "Call of Duty: Modern Warfare est un jeu vidéo de tir à la première personne développé par Infinity Ward et édité par Activision. Il est sorti le 25 octobre 2019 sur Windows, PlayStation 4 et Xbox One.",
-        "url_background" : "https://media.playstation.com/is/image/SCEA/call-of-duty-modern-warfare-hero-banner-03-ps4-us-30may19?$native_nt$"
-      },
-      "5" : {
-        "id" : 5,
-        "name" : "Red Dead Redemption 2",
-        "description" : "Red Dead Redemption II est un jeu vidéo d'action-aventure et de western multiplateforme, développé par Rockstar Studios et édité par Rockstar Games, sorti le 26 octobre 2018 sur PlayStation 4 et Xbox One et le 5 novembre 2019 sur Microsoft Windows. Une version Stadia est également prévue pour novembre 2019.",
-        "url_background" : "https://www.erenumerique.fr/wp-content/uploads/2018/11/la-prochaine-bande-annonce-de-red-dead-redemption-2-arrive-le-2-mai-88fb1861.jpg"
-      }
-    }
-  }
+    "jeux": [
+        {
+            "id": 1,
+            "name": "Doom",
+            "description": "Jeu de tir à la première personne"
+        },
+        {
+            "id": 2,
+            "name": "Call Of Duty",
+            "description": "Jeu de tir à la première personne"
+        },
+        {
+            "id": 3,
+            "name": "Tomb Raider",
+            "description": "Exploration"
+        }
+    ]
+}
