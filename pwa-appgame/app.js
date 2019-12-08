@@ -19,18 +19,24 @@
   const btnConnexion = document.getElementById("connexion");
   const btnDisconnect = document.getElementById("logout");
 
-if(btnConnexion){
-  btnConnexion.addEventListener('click',e =>{
-      //get email and pass
-      const email =txtEmail.value;
-      const pass =txtPassword.value;
-      const auth = firebase.auth();
-      //sign in
-      const promise = auth.signInWithEmailAndPassword(email,pass);
-      document.location.href="accueil.html"
-      promise.catch( e => console.log(e.message));
-  });
-};
+  if(btnConnexion){
+    btnConnexion.addEventListener('click',e =>{
+        //get email and pass
+        const email =txtEmail.value;
+        const pass =txtPassword.value;
+        const auth = firebase.auth();
+        //sign in
+        if(email!=null && pass!=null){
+        const promise = auth.signInWithEmailAndPassword(email,pass).then(function(){
+          document.location.href="accueil.html"
+          console.log('log in succesful');
+      }).catch(function(error){
+          console.log(error.message);
+      });
+    }
+  
+    });
+  };
 
 if(btnInscription){
   btnInscription.addEventListener('click',e => {
