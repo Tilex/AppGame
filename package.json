@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Tilex/AppGame/issues"
   },
-  "homepage": "https://github.com/Tilex/AppGame#readme"
+  "homepage": "https://github.com/Tilex/AppGame#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
