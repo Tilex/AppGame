@@ -1,0 +1,80 @@
+<html lang="fr">
+
+<head>
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>AppGame</title>
+  <link rel="manifest" href="/manifest.json">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
+  <link rel="icon" sizes="32x32" href="images/favicon/favicon-32.png" type="image/png">
+  <link rel="icon" sizes="64x64" href="images/favicon/favicon-64.png" type="image/png">
+  <link rel="icon" sizes="96x96" href="images/favicon/favicon-96.png" type="image/png">
+  <link rel="icon" sizes="196x196" href="images/favicon/favicon-196.png" type="image/png">
+  <meta name="msapplication-TileImage" content="images/favicon/favicon-144.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <script src="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth.css" />
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+  <script> 
+      $(function(){
+        $("#header1").load("header.html"); 
+        //$("#footer1").load("footer.html"); 
+      });
+      </script>
+</head>
+<body>
+
+<div class="header" id="header1"></div>
+
+
+
+<div class="container"><br>
+  <br>
+  <br>
+  <div class="row">
+  <div class="col-3"></div>
+  <div class="col-6 bg-light ">
+
+      
+  
+    
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email1" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required >
+      </div>
+      <div class="form-group">
+                  <label for="password">Mot de passe</label>
+                  <input type="password" id="password" name="password"  class="form-control" pattern="[0-9A-Za-z.-*_+/%]" required>
+      </div>
+      <!--<div class="form-group">
+        <a href="mdpforgotten.html" class="text-muted">Mot de passe oublié ?</a>
+      </div>-->
+      <div class="form-group">
+        <a href="#" id="inscription" class="text-muted">S'inscrire</a>
+      </div>
+      
+      <button  id="connexion" class="btn btn-secondary">Se connecter</button><br><br>
+      <div class="form-group">
+          <button id="btngoogle" class="btn btn-dark text-light" onclick="googleSignIn()"><i class="fab fa-google text-danger"></i> Se Connecter avec Google</button>
+      </div>
+  
+</div>
+<div class="col-3"></div>
+</div>
+</div>
+
+
+<div class="footer" id="footer1">
+    
+</div>
+<script src="pwa-appgame/app.js"></script>
+</body>
+</html>
