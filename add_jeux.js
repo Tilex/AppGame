@@ -61,6 +61,23 @@ addJeuForm.addEventListener('submit', evt => {
             }
         })
         .then(() => {
+            if(window.Notification && window.Notification !== "denied"){
+                // demande une permission
+                Notification.requestPermission(perm => {
+                    // vérifie si la permission est acceptée par l'utilisateur
+                    if(perm === "granted"){
+                        // On crée une nouvelle notification
+                        const options = {
+                            icon : "images/icons/icon-72x72.png"
+                        }
+                        const notif = new Notification( "Le jeu a bien été ajouté", options);
+                    }
+                    else{
+                        // Notification refusée
+                        console.log("Notification refusée");
+                    }
+                })
+            }
             clearForm();
             document.location.href="accueil.html"
         })
@@ -113,9 +130,27 @@ addJeuForm2.addEventListener('submit', evt => {
             }
         })
         .then(() => {
+            if(window.Notification && window.Notification !== "denied"){
+                // demande une permission
+                Notification.requestPermission(perm => {
+                    // vérifie si la permission est acceptée par l'utilisateur
+                    if(perm === "granted"){
+                        // On crée une nouvelle notification
+                        const options = {
+                            icon : "images/icons/icon-72x72.png"
+                        }
+                        const notif = new Notification( "Le jeu a bien été ajouté", options);
+                    }
+                    else{
+                        // Notification refusée
+                        console.log("Notification refusée");
+                    }
+                })
+            }
             clearForm();
             document.location.href="accueil.html"
         })
+        
         .catch(error => console.error(error));
 
         // 9.1 Infrastructure
@@ -165,6 +200,23 @@ addJeuForm3.addEventListener('submit', evt => {
             }
         })
         .then(() => {
+            if(window.Notification && window.Notification !== "denied"){
+                // demande une permission
+                Notification.requestPermission(perm => {
+                    // vérifie si la permission est acceptée par l'utilisateur
+                    if(perm === "granted"){
+                        // On crée une nouvelle notification
+                        const options = {
+                            icon : "images/icons/icon-72x72.png"
+                        }
+                        const notif = new Notification( "Le jeu a bien été ajouté", options);
+                    }
+                    else{
+                        // Notification refusée
+                        console.log("Notification refusée");
+                    }
+                })
+            }
             clearForm();
             document.location.href="accueil.html"
         })
@@ -217,6 +269,23 @@ addJeuForm4.addEventListener('submit', evt => {
             }
         })
         .then(() => {
+            if(window.Notification && window.Notification !== "denied"){
+            // demande une permission
+            Notification.requestPermission(perm => {
+                // vérifie si la permission est acceptée par l'utilisateur
+                if(perm === "granted"){
+                    // On crée une nouvelle notification
+                    const options = {
+                        icon : "images/icons/icon-72x72.png"
+                    }
+                    const notif = new Notification("Le jeu a bien été ajouté", options);
+                }
+                else{
+                    // Notification refusée
+                    console.log("Notification refusée");
+                }
+            })
+        }
             clearForm();
             document.location.href="accueil.html"
         })
@@ -269,6 +338,23 @@ addJeuForm5.addEventListener('submit', evt => {
             }
         })
         .then(() => {
+            if(window.Notification && window.Notification !== "denied"){
+                // demande une permission
+                Notification.requestPermission(perm => {
+                    // vérifie si la permission est acceptée par l'utilisateur
+                    if(perm === "granted"){
+                        // On crée une nouvelle notification
+                        const options = {
+                            icon : "images/icons/icon-72x72.png"
+                        }
+                        const notif = new Notification( "Le jeu a bien été ajouté", options);
+                    }
+                    else{
+                        // Notification refusée
+                        console.log("Notification refusée");
+                    }
+                })
+            }
             clearForm();
             document.location.href="accueil.html"
         })
