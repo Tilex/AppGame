@@ -1,9 +1,6 @@
 {
-    "name": "AppGame",
     "short_name": "AppGame",
-    "theme_color": "#2196f3",
-    "background_color": "#2196f3",
-    "display": "standalone",
+    "name": "AppGame",
     "icons": [
       {
             "src": "images/icons/icon-72x72.png",
@@ -46,5 +43,8 @@
             "type": "image/png"
         }
     ],
-    "splash_pages": null
+    "start_url":"index.html",
+    "display": "standalone",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3"
 }
