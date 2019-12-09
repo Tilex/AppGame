@@ -6,15 +6,15 @@ function loadJeux(jeux) {
         response.json()
             .then(jeux => {
                 const alljeux = jeux.map(t =>`
-                <form id = ${t.id}>
+                <div id = ${t.id}>
                 <div class="card">
                 <img src="${t.url_background}" alt="game pic" style="width:100%">
                 <h1>${t.name}</h1>
                 <p class="description">${t.description}</p>
-                <button name="${t.id}" type="submit" onclick="clicked(this);">Retirer de mes jeux</button>
+                <button data-id_jeux="${t.id}" name="${t.id}" onclick="remove_jeu(this);">Retirer de mes jeux</button>
               </div>
             </div>
-            </form> 
+            </div> 
             `)
                     .join('');
 

@@ -1,17 +1,10 @@
- var id;
- function clicked(item) {
-    const removeJeuForm = $(item).attr("id");
-    console.log(removeJeuForm);
-};
-const removeJeuForm = document.querySelector(id)
-console.log(removeJeuForm);
-console.log(id);
+ function remove_jeu(item) {
+    //const removeJeuForm = $(item).attr("id");
+    id_jeux = item.dataset["id_jeux"];
 
-removeJeuForm.addEventListener('submit', evt => {
-    evt.preventDefault();
     const payload = {
         // 9.1 Infrastructure
-        id: removeJeuForm,
+        id: id_jeux,
     }
     //9.3 Branchement de notre Bdd Firebase
     fetch('https://us-central1-pwa-appgame.cloudfunctions.net/deleteJeu', { 
@@ -31,7 +24,7 @@ removeJeuForm.addEventListener('submit', evt => {
                 console.log('we are probably offline');
                 navigator.serviceWorker.ready.then(registration => {
                     // put jeu in IndexedDB for later syncing
-                    return putJeu(payload, payload.id).then(() => {
+                    return deleteJeu(payload.id).then(() => {
                         // register a sync with the ServiceWorker
                         return registration.sync.register('sync-jeux')
                     });
@@ -42,13 +35,7 @@ removeJeuForm.addEventListener('submit', evt => {
             }
         })
         .then(() => {
-            clearForm();
             document.location.href="accueil.html"
         })
         .catch(error => console.error(error));
-
-        // 9.1 Infrastructure
-        const clearForm = () => {
-            jeuIdField.focus();
-        }; 
-})
+};
