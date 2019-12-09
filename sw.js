@@ -67,6 +67,7 @@ self.addEventListener('install', (evt) => {
             'style.css',
             'add_jeux.html',
             'add_jeux.js',
+            'manifest.json'
         ])
             .then(console.log('cache initialisé'))
             .catch(console.err);
